@@ -1,0 +1,2 @@
+verilog work "dds_fm.v"
+verilog work "dma_sram_dds.v"

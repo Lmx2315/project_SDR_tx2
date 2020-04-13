@@ -1,0 +1,1516 @@
+Release 14.7 Map P.20131013 (nt64)
+Xilinx Mapping Report File for Design 'top'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol
+high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off
+-pr off -lc off -power off -o top_map.ncd top.ngd top.pcf 
+Target Device  : xc6slx9
+Target Package : tqg144
+Target Speed   : -3
+Mapper Version : spartan6 -- $Revision: 1.55 $
+Mapped Date    : Fri Dec 28 17:17:45 2018
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:    2
+Slice Logic Utilization:
+  Number of Slice Registers:                 1,969 out of  11,440   17%
+    Number used as Flip Flops:               1,969
+    Number used as Latches:                      0
+    Number used as Latch-thrus:                  0
+    Number used as AND/OR logics:                0
+  Number of Slice LUTs:                      1,693 out of   5,720   29%
+    Number used as logic:                    1,560 out of   5,720   27%
+      Number using O6 output only:             779
+      Number using O5 output only:             273
+      Number using O5 and O6:                  508
+      Number used as ROM:                        0
+    Number used as Memory:                      42 out of   1,440    2%
+      Number used as Dual Port RAM:              0
+      Number used as Single Port RAM:            0
+      Number used as Shift Register:            42
+        Number using O6 output only:            38
+        Number using O5 output only:             0
+        Number using O5 and O6:                  4
+    Number used exclusively as route-thrus:     91
+      Number with same-slice register load:     57
+      Number with same-slice carry load:        34
+      Number with other load:                    0
+
+Slice Logic Distribution:
+  Number of occupied Slices:                   581 out of   1,430   40%
+  Number of MUXCYs used:                       576 out of   2,860   20%
+  Number of LUT Flip Flop pairs used:        1,952
+    Number with an unused Flip Flop:           354 out of   1,952   18%
+    Number with an unused LUT:                 259 out of   1,952   13%
+    Number of fully used LUT-FF pairs:       1,339 out of   1,952   68%
+    Number of unique control sets:              93
+    Number of slice register sites lost
+      to control set restrictions:             201 out of  11,440    1%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
+IO Utilization:
+  Number of bonded IOBs:                        67 out of     102   65%
+    Number of LOCed IOBs:                       67 out of      67  100%
+
+Specific Feature Utilization:
+  Number of RAMB16BWERs:                        32 out of      32  100%
+  Number of RAMB8BWERs:                          0 out of      64    0%
+  Number of BUFIO2/BUFIO2_2CLKs:                 1 out of      32    3%
+    Number used as BUFIO2s:                      1
+    Number used as BUFIO2_2CLKs:                 0
+  Number of BUFIO2FB/BUFIO2FB_2CLKs:             1 out of      32    3%
+    Number used as BUFIO2FBs:                    1
+    Number used as BUFIO2FB_2CLKs:               0
+  Number of BUFG/BUFGMUXs:                       4 out of      16   25%
+    Number used as BUFGs:                        4
+    Number used as BUFGMUX:                      0
+  Number of DCM/DCM_CLKGENs:                     1 out of       4   25%
+    Number used as DCMs:                         1
+    Number used as DCM_CLKGENs:                  0
+  Number of ILOGIC2/ISERDES2s:                   0 out of     200    0%
+  Number of IODELAY2/IODRP2/IODRP2_MCBs:         0 out of     200    0%
+  Number of OLOGIC2/OSERDES2s:                   0 out of     200    0%
+  Number of BSCANs:                              0 out of       4    0%
+  Number of BUFHs:                               0 out of     128    0%
+  Number of BUFPLLs:                             0 out of       8    0%
+  Number of BUFPLL_MCBs:                         0 out of       4    0%
+  Number of DSP48A1s:                            3 out of      16   18%
+  Number of ICAPs:                               0 out of       1    0%
+  Number of MCBs:                                0 out of       2    0%
+  Number of PCILOGICSEs:                         0 out of       2    0%
+  Number of PLL_ADVs:                            0 out of       2    0%
+  Number of PMVs:                                0 out of       1    0%
+  Number of STARTUPs:                            0 out of       1    0%
+  Number of SUSPEND_SYNCs:                       0 out of       1    0%
+
+Average Fanout of Non-Clock Nets:                3.35
+
+Peak Memory Usage:  481 MB
+Total REAL time to MAP completion:  34 secs 
+Total CPU time to MAP completion:   33 secs 
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Timing Report
+Section 11 - Configuration String Information
+Section 12 - Control Set Information
+Section 13 - Utilization by Hierarchy
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+WARNING:Pack:1653 - At least one timing constraint is impossible to meet because component delays alone exceed the constraint. A timing
+   constraint summary below shows the failing constraints (preceded with an Asterisk (*)). Please use the Timing Analyzer (GUI) or TRCE
+   (command line) with the Mapped NCD and PCF files to identify which constraints and paths are failing because of the component delays
+   alone. If the failing path(s) is mapped to Xilinx components as expected, consider relaxing the constraint. If it is not mapped to
+   components as expected, re-evaluate your HDL and how synthesis is optimizing the path. To allow the tools to bypass this error, set the
+   environment variable XIL_TIMING_ALLOW_IMPOSSIBLE to 1.
+
+
+   For more information about the Timing Analyzer, consult the Xilinx Timing Analyzer Reference manual; for more information on TRCE,
+   consult the Xilinx Command Line Tools User Guide "TRACE" chapter.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net upr_at45db321_1/reg_fifo_rd
+   is sourced by a combinatorial pin. This is not good design practice. Use the
+   CE pin to control the loading of data into the flip-flop.
+
+Section 3 - Informational
+-------------------------
+INFO:LIT:243 - Logical network sram_d<15>_IBUF has no load.
+INFO:LIT:395 - The above info message is repeated 70 more times for the
+   following (max. 5 shown):
+   dds_mod_fm/sine<7>,
+   dds_mod_fm/sine<6>,
+   dds_mod_fm/sine<5>,
+   dds_mod_fm/sine<4>,
+   dds_mod_fm/sine<3>
+   To see the details of these info messages, please use the -detail switch.
+INFO:MapLib:562 - No environment variables are currently set.
+INFO:LIT:244 - All of the single ended outputs in this design are using slew
+   rate limited output drivers. The delay on speed critical single ended outputs
+   can be dramatically reduced by designating them as fast outputs.
+INFO:Pack:1716 - Initializing temperature to 85.000 Celsius. (default - Range:
+   0.000 to 85.000 Celsius)
+INFO:Pack:1720 - Initializing voltage to 1.140 Volts. (default - Range: 1.140 to
+   1.260 Volts)
+INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
+   (.mrp).
+INFO:Pack:1650 - Map created a placed design.
+INFO:PhysDesignRules:1861 - To achieve optimal frequency synthesis performance
+   with the CLKFX and CLKFX180 outputs of the DCM comp clknetwork/dcm_sp_inst,
+   consult the device Data Sheet.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+ 372 block(s) removed
+  40 block(s) optimized away
+ 439 signal(s) removed
+
+Section 5 - Removed Logic
+-------------------------
+
+The trimmed logic report below shows the logic removed from your design due to
+sourceless or loadless signals, and VCC or ground connections.  If the removal
+of a signal or symbol results in the subsequent removal of an additional signal
+or symbol, the message explaining that second removal will be indented.  This
+indentation will be repeated as a chain of related logic is removed.
+
+To quickly locate the original cause for the removal of a chain of logic, look
+above the place where that logic is listed in the trimming report, then locate
+the lines that are least indented (begin at the leftmost edge).
+
+Loadless block "m1/ADDERTREE_INTERNAL_Madd215" (ROM) removed.
+The signal "dds_mod_fm/sine<7>" is sourceless and has been removed.
+The signal "dds_mod_fm/sine<6>" is sourceless and has been removed.
+The signal "dds_mod_fm/sine<5>" is sourceless and has been removed.
+The signal "dds_mod_fm/sine<4>" is sourceless and has been removed.
+The signal "dds_mod_fm/sine<3>" is sourceless and has been removed.
+The signal "dds_mod_fm/sine<2>" is sourceless and has been removed.
+The signal "dds_mod_fm/sine<1>" is sourceless and has been removed.
+The signal "dds_mod_fm/sine<0>" is sourceless and has been removed.
+The signal
+"dds_mod_fm/U0/i_synth/i_rdy.i_single_channel.i_non_trivial_lat.i_rdy/opt_has_pi
+pe.first_q" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000001" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000002" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000045" (FF) removed.
+  The signal "dds_mod_fm/sig00000087" is sourceless and has been removed.
+The signal "dds_mod_fm/sig0000000c" is sourceless and has been removed.
+The signal "dds_mod_fm/sig0000000d" is sourceless and has been removed.
+The signal "dds_mod_fm/sig0000000e" is sourceless and has been removed.
+The signal "dds_mod_fm/sig0000000f" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000010" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000011" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000012" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000013" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000014" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000015" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000016" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000017" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000018" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000019" is sourceless and has been removed.
+The signal "dds_mod_fm/sig0000001a" is sourceless and has been removed.
+The signal "dds_mod_fm/sig0000001b" is sourceless and has been removed.
+The signal "dds_mod_fm/sig0000001c" is sourceless and has been removed.
+The signal "dds_mod_fm/sig0000001d" is sourceless and has been removed.
+The signal "dds_mod_fm/sig0000001e" is sourceless and has been removed.
+The signal "dds_mod_fm/sig0000001f" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000020" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000021" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000022" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000023" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000024" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000025" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000026" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000027" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000028" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000029" is sourceless and has been removed.
+The signal "dds_mod_fm/sig0000002a" is sourceless and has been removed.
+The signal "dds_mod_fm/sig0000002b" is sourceless and has been removed.
+The signal "dds_mod_fm/sig0000004e" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000046" (FF) removed.
+  The signal "dds_mod_fm/sig00000004" is sourceless and has been removed.
+The signal "dds_mod_fm/sig0000004d" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000047" (FF) removed.
+  The signal "dds_mod_fm/sig00000005" is sourceless and has been removed.
+The signal "dds_mod_fm/sig0000004c" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000048" (FF) removed.
+  The signal "dds_mod_fm/sig00000006" is sourceless and has been removed.
+The signal "dds_mod_fm/sig0000004b" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000049" (FF) removed.
+  The signal "dds_mod_fm/sig00000007" is sourceless and has been removed.
+The signal "dds_mod_fm/sig0000004a" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk0000004a" (FF) removed.
+  The signal "dds_mod_fm/sig00000008" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000049" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk0000004b" (FF) removed.
+  The signal "dds_mod_fm/sig00000009" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000048" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk0000004c" (FF) removed.
+  The signal "dds_mod_fm/sig0000000a" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000047" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk0000004d" (FF) removed.
+  The signal "dds_mod_fm/sig0000000b" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000046" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk0000004e" (FF) removed.
+  The signal "dds_mod_fm/sig00000086" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000045" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk0000004f" (FF) removed.
+  The signal "dds_mod_fm/sig00000085" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000044" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000050" (FF) removed.
+  The signal "dds_mod_fm/sig00000084" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000043" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000051" (FF) removed.
+  The signal "dds_mod_fm/sig00000083" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000042" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000052" (FF) removed.
+  The signal "dds_mod_fm/sig00000082" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000041" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000053" (FF) removed.
+  The signal "dds_mod_fm/sig00000081" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000040" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000054" (FF) removed.
+  The signal "dds_mod_fm/sig00000080" is sourceless and has been removed.
+The signal "dds_mod_fm/sig0000003f" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000055" (FF) removed.
+  The signal "dds_mod_fm/sig0000007f" is sourceless and has been removed.
+The signal "dds_mod_fm/sig0000003e" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000056" (FF) removed.
+  The signal "dds_mod_fm/sig0000007e" is sourceless and has been removed.
+The signal "dds_mod_fm/sig0000003d" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000057" (FF) removed.
+  The signal "dds_mod_fm/sig0000007d" is sourceless and has been removed.
+The signal "dds_mod_fm/sig0000003c" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000058" (FF) removed.
+  The signal "dds_mod_fm/sig0000007c" is sourceless and has been removed.
+The signal "dds_mod_fm/sig0000003b" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000059" (FF) removed.
+  The signal "dds_mod_fm/sig0000007b" is sourceless and has been removed.
+The signal "dds_mod_fm/sig0000003a" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk0000005a" (FF) removed.
+  The signal "dds_mod_fm/sig0000007a" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000039" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk0000005b" (FF) removed.
+  The signal "dds_mod_fm/sig00000079" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000038" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk0000005c" (FF) removed.
+  The signal "dds_mod_fm/sig00000078" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000037" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk0000005d" (FF) removed.
+  The signal "dds_mod_fm/sig00000077" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000036" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk0000005e" (FF) removed.
+  The signal "dds_mod_fm/sig00000076" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000035" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk0000005f" (FF) removed.
+  The signal "dds_mod_fm/sig00000075" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000034" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000060" (FF) removed.
+  The signal "dds_mod_fm/sig00000074" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000033" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000061" (FF) removed.
+  The signal "dds_mod_fm/sig00000073" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000032" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000062" (FF) removed.
+  The signal "dds_mod_fm/sig00000072" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000031" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000063" (FF) removed.
+  The signal "dds_mod_fm/sig00000071" is sourceless and has been removed.
+The signal "dds_mod_fm/sig00000030" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000064" (FF) removed.
+  The signal "dds_mod_fm/sig00000070" is sourceless and has been removed.
+The signal "dds_mod_fm/sig0000002f" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000065" (FF) removed.
+  The signal "dds_mod_fm/sig0000006f" is sourceless and has been removed.
+The signal "dds_mod_fm/sig0000002c" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000004" (FF) removed.
+The signal "dds_mod_fm/sig0000006e" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000025" (FF) removed.
+The signal "dds_mod_fm/sig0000006d" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000026" (FF) removed.
+The signal "dds_mod_fm/sig0000006c" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000027" (FF) removed.
+The signal "dds_mod_fm/sig0000006b" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000028" (FF) removed.
+The signal "dds_mod_fm/sig0000006a" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000029" (FF) removed.
+The signal "dds_mod_fm/sig00000069" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk0000002a" (FF) removed.
+The signal "dds_mod_fm/sig00000068" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk0000002b" (FF) removed.
+The signal "dds_mod_fm/sig00000067" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk0000002c" (FF) removed.
+The signal "dds_mod_fm/sig00000066" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk0000002d" (FF) removed.
+The signal "dds_mod_fm/sig00000065" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk0000002e" (FF) removed.
+The signal "dds_mod_fm/sig00000064" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk0000002f" (FF) removed.
+The signal "dds_mod_fm/sig00000063" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000030" (FF) removed.
+The signal "dds_mod_fm/sig00000062" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000031" (FF) removed.
+The signal "dds_mod_fm/sig00000061" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000032" (FF) removed.
+The signal "dds_mod_fm/sig00000060" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000033" (FF) removed.
+The signal "dds_mod_fm/sig0000005f" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000034" (FF) removed.
+The signal "dds_mod_fm/sig0000005e" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000035" (FF) removed.
+The signal "dds_mod_fm/sig0000005d" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000036" (FF) removed.
+The signal "dds_mod_fm/sig0000005c" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000037" (FF) removed.
+The signal "dds_mod_fm/sig0000005b" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000038" (FF) removed.
+The signal "dds_mod_fm/sig0000005a" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000039" (FF) removed.
+The signal "dds_mod_fm/sig00000059" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk0000003a" (FF) removed.
+The signal "dds_mod_fm/sig00000058" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk0000003b" (FF) removed.
+The signal "dds_mod_fm/sig00000057" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk0000003c" (FF) removed.
+The signal "dds_mod_fm/sig00000056" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk0000003d" (FF) removed.
+The signal "dds_mod_fm/sig00000055" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk0000003e" (FF) removed.
+The signal "dds_mod_fm/sig00000054" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk0000003f" (FF) removed.
+The signal "dds_mod_fm/sig00000053" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000040" (FF) removed.
+The signal "dds_mod_fm/sig00000052" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000041" (FF) removed.
+The signal "dds_mod_fm/sig00000051" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000042" (FF) removed.
+The signal "dds_mod_fm/sig00000050" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000043" (FF) removed.
+The signal "dds_mod_fm/sig0000004f" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000044" (FF) removed.
+The signal "dds_mod_fm/sig0000002e" is sourceless and has been removed.
+The signal "dds_mod_fm/sig0000002d" is sourceless and has been removed.
+ Sourceless block "dds_mod_fm/blk00000066" (ROM) removed.
+ Sourceless block "dds_mod_fm/blk0000006a" (ROM) removed.
+  The signal "dds_mod_fm/sig00000088" is sourceless and has been removed.
+   Sourceless block "dds_mod_fm/blk00000068" (FF) removed.
+ Sourceless block "dds_mod_fm/blk0000006b" (ROM) removed.
+  The signal "dds_mod_fm/sig00000089" is sourceless and has been removed.
+   Sourceless block "dds_mod_fm/blk00000069" (FF) removed.
+    The signal "dds_mod_fm/sig00000003" is sourceless and has been removed.
+The signal "sim1/dds_cos/sig00000043" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk00000023" (FF) removed.
+  The signal "sim1/dds_cos/sig00000064" is sourceless and has been removed.
+The signal "sim1/dds_cos/sig00000082" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk000000b7" (XOR) removed.
+  The signal "sim1/dds_cos/sig000000a8" is sourceless and has been removed.
+   Sourceless block "sim1/dds_cos/blk00000112" (FF) removed.
+    The signal "sim1/dds_cos/sig00000121" is sourceless and has been removed.
+     Sourceless block "sim1/dds_cos/blk000000e8" (FF) removed.
+      The signal "sim1/dds_cos/sig00000107" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk000000b8" (MUX) removed.
+  The signal "sim1/dds_cos/sig00000081" is sourceless and has been removed.
+   Sourceless block "sim1/dds_cos/blk00000111" (FF) removed.
+    The signal "sim1/dds_cos/sig00000122" is sourceless and has been removed.
+     Sourceless block "sim1/dds_cos/blk0000013e" (ROM) removed.
+      The signal "sim1/dds_cos/sig00000076" is sourceless and has been removed.
+       Sourceless block "sim1/dds_cos/blk000000f7" (FF) removed.
+        The signal "sim1/dds_cos/sig00000108" is sourceless and has been removed.
+     Sourceless block "sim1/dds_cos/blk0000013f" (ROM) removed.
+      The signal "sim1/dds_cos/sig00000071" is sourceless and has been removed.
+       Sourceless block "sim1/dds_cos/blk0000011a" (ROM) removed.
+        The signal "sim1/dds_cos/sig000000c5" is sourceless and has been removed.
+         Sourceless block "sim1/dds_cos/blk000000f0" (FF) removed.
+          The signal "sim1/dds_cos/sig0000010f" is sourceless and has been removed.
+       Sourceless block "sim1/dds_cos/blk0000011b" (ROM) removed.
+        The signal "sim1/dds_cos/sig000000c4" is sourceless and has been removed.
+         Sourceless block "sim1/dds_cos/blk000000f1" (FF) removed.
+          The signal "sim1/dds_cos/sig0000010e" is sourceless and has been removed.
+       Sourceless block "sim1/dds_cos/blk0000011f" (ROM) removed.
+        The signal "sim1/dds_cos/sig000000c3" is sourceless and has been removed.
+         Sourceless block "sim1/dds_cos/blk000000f2" (FF) removed.
+          The signal "sim1/dds_cos/sig0000010d" is sourceless and has been removed.
+     Sourceless block "sim1/dds_cos/blk0000014a" (ROM) removed.
+      The signal "sim1/dds_cos/sig000000c2" is sourceless and has been removed.
+       Sourceless block "sim1/dds_cos/blk000000f3" (FF) removed.
+        The signal "sim1/dds_cos/sig0000010c" is sourceless and has been removed.
+     Sourceless block "sim1/dds_cos/blk0000014b" (ROM) removed.
+      The signal "sim1/dds_cos/sig000000c1" is sourceless and has been removed.
+       Sourceless block "sim1/dds_cos/blk000000f4" (FF) removed.
+        The signal "sim1/dds_cos/sig0000010b" is sourceless and has been removed.
+     Sourceless block "sim1/dds_cos/blk0000014c" (ROM) removed.
+      The signal "sim1/dds_cos/sig000000c0" is sourceless and has been removed.
+       Sourceless block "sim1/dds_cos/blk000000f5" (FF) removed.
+        The signal "sim1/dds_cos/sig0000010a" is sourceless and has been removed.
+     Sourceless block "sim1/dds_cos/blk0000014d" (ROM) removed.
+      The signal "sim1/dds_cos/sig000000bf" is sourceless and has been removed.
+       Sourceless block "sim1/dds_cos/blk000000f6" (FF) removed.
+        The signal "sim1/dds_cos/sig00000109" is sourceless and has been removed.
+The signal "sim1/dds_cos/sig000000af" is sourceless and has been removed.
+The signal "sim1/dds_cos/sig00000083" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk000000b9" (XOR) removed.
+  The signal "sim1/dds_cos/sig000000a7" is sourceless and has been removed.
+   Sourceless block "sim1/dds_cos/blk00000113" (FF) removed.
+    The signal "sim1/dds_cos/sig00000120" is sourceless and has been removed.
+     Sourceless block "sim1/dds_cos/blk000000e9" (FF) removed.
+      The signal "sim1/dds_cos/sig00000106" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk000000ba" (MUX) removed.
+The signal "sim1/dds_cos/sig000000ae" is sourceless and has been removed.
+The signal "sim1/dds_cos/sig00000084" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk000000bb" (XOR) removed.
+  The signal "sim1/dds_cos/sig000000a6" is sourceless and has been removed.
+   Sourceless block "sim1/dds_cos/blk00000114" (FF) removed.
+    The signal "sim1/dds_cos/sig0000011f" is sourceless and has been removed.
+     Sourceless block "sim1/dds_cos/blk000000ea" (FF) removed.
+      The signal "sim1/dds_cos/sig00000105" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk000000bc" (MUX) removed.
+The signal "sim1/dds_cos/sig000000ad" is sourceless and has been removed.
+The signal "sim1/dds_cos/sig00000085" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk000000bd" (XOR) removed.
+  The signal "sim1/dds_cos/sig000000a5" is sourceless and has been removed.
+   Sourceless block "sim1/dds_cos/blk00000115" (FF) removed.
+    The signal "sim1/dds_cos/sig0000011e" is sourceless and has been removed.
+     Sourceless block "sim1/dds_cos/blk000000eb" (FF) removed.
+      The signal "sim1/dds_cos/sig00000104" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk000000be" (MUX) removed.
+The signal "sim1/dds_cos/sig000000ac" is sourceless and has been removed.
+The signal "sim1/dds_cos/sig00000086" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk000000bf" (XOR) removed.
+  The signal "sim1/dds_cos/sig000000a4" is sourceless and has been removed.
+   Sourceless block "sim1/dds_cos/blk00000116" (FF) removed.
+    The signal "sim1/dds_cos/sig0000011d" is sourceless and has been removed.
+     Sourceless block "sim1/dds_cos/blk000000ec" (FF) removed.
+      The signal "sim1/dds_cos/sig00000103" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk000000c0" (MUX) removed.
+The signal "sim1/dds_cos/sig000000ab" is sourceless and has been removed.
+The signal "sim1/dds_cos/sig00000087" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk000000c1" (XOR) removed.
+  The signal "sim1/dds_cos/sig000000a3" is sourceless and has been removed.
+   Sourceless block "sim1/dds_cos/blk00000117" (FF) removed.
+    The signal "sim1/dds_cos/sig0000011c" is sourceless and has been removed.
+     Sourceless block "sim1/dds_cos/blk000000ed" (FF) removed.
+      The signal "sim1/dds_cos/sig00000102" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk000000c2" (MUX) removed.
+The signal "sim1/dds_cos/sig000000aa" is sourceless and has been removed.
+The signal "sim1/dds_cos/sig00000088" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk000000c3" (XOR) removed.
+  The signal "sim1/dds_cos/sig000000a2" is sourceless and has been removed.
+   Sourceless block "sim1/dds_cos/blk00000118" (FF) removed.
+    The signal "sim1/dds_cos/sig0000011b" is sourceless and has been removed.
+     Sourceless block "sim1/dds_cos/blk000000ee" (FF) removed.
+      The signal "sim1/dds_cos/sig00000101" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk000000c4" (MUX) removed.
+The signal "sim1/dds_cos/sig000000a9" is sourceless and has been removed.
+The signal "sim1/dds_cos/sig00000146" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk000000c5" (XOR) removed.
+  The signal "sim1/dds_cos/sig000000a1" is sourceless and has been removed.
+   Sourceless block "sim1/dds_cos/blk00000119" (FF) removed.
+    The signal "sim1/dds_cos/sig0000011a" is sourceless and has been removed.
+     Sourceless block "sim1/dds_cos/blk000000ef" (FF) removed.
+      The signal "sim1/dds_cos/sig00000100" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk000000c6" (MUX) removed.
+The signal "sim1/dds_cos/sig0000006e" is sourceless and has been removed.
+The signal "sim1/dds_cos/sig000000b6" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk00000101" (FF) removed.
+  The signal "sim1/dds_cos/sig0000006f" is sourceless and has been removed.
+The signal "sim1/dds_cos/sig000000b5" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk00000102" (FF) removed.
+  The signal "sim1/dds_cos/sig00000070" is sourceless and has been removed.
+The signal "sim1/dds_cos/sig000000b4" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk00000103" (FF) removed.
+  The signal "sim1/dds_cos/sig00000072" is sourceless and has been removed.
+The signal "sim1/dds_cos/sig000000b3" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk00000104" (FF) removed.
+  The signal "sim1/dds_cos/sig00000073" is sourceless and has been removed.
+The signal "sim1/dds_cos/sig000000b2" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk00000105" (FF) removed.
+  The signal "sim1/dds_cos/sig00000074" is sourceless and has been removed.
+The signal "sim1/dds_cos/sig000000b1" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk00000106" (FF) removed.
+  The signal "sim1/dds_cos/sig00000075" is sourceless and has been removed.
+The signal "sim1/dds_cos/sig000000b0" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk00000107" (FF) removed.
+  The signal "sim1/dds_cos/sig00000123" is sourceless and has been removed.
+The signal "sim1/dds_cos/sig00000134" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk00000120" (ROM) removed.
+The signal "sim1/dds_cos/sig00000135" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk00000121" (ROM) removed.
+The signal "sim1/dds_cos/sig00000136" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk00000122" (ROM) removed.
+The signal "sim1/dds_cos/sig00000137" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk00000123" (ROM) removed.
+The signal "sim1/dds_cos/sig00000138" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk00000124" (ROM) removed.
+The signal "sim1/dds_cos/sig00000139" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk00000125" (ROM) removed.
+The signal "sim1/dds_cos/sig0000013a" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk00000126" (ROM) removed.
+The signal "sim1/dds_cos/sig0000013b" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk00000127" (ROM) removed.
+The signal "sim1/dds_cos/sig0000013c" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk00000128" (ROM) removed.
+The signal "sim1/dds_cos/sig0000013d" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk00000129" (ROM) removed.
+The signal "sim1/dds_cos/sig0000013e" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk0000012a" (ROM) removed.
+The signal "sim1/dds_cos/sig0000013f" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk0000012b" (ROM) removed.
+The signal "sim1/dds_cos/sig00000140" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk0000012c" (ROM) removed.
+The signal "sim1/dds_cos/sig00000141" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk0000012d" (ROM) removed.
+The signal "sim1/dds_cos/sig00000133" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk00000159" (ROM) removed.
+The signal "sim1/dds_cos/sig000000ff" is sourceless and has been removed.
+The signal "sim1/dds_cos/sig000000fe" is sourceless and has been removed.
+The signal "sim1/dds_cos/sig000000fd" is sourceless and has been removed.
+The signal "sim1/dds_cos/sig000000fc" is sourceless and has been removed.
+The signal "sim1/dds_cos/sig000000fb" is sourceless and has been removed.
+The signal "sim1/dds_cos/sig000000fa" is sourceless and has been removed.
+The signal "sim1/dds_cos/sig000000f9" is sourceless and has been removed.
+The signal "sim1/dds_cos/sig000000f8" is sourceless and has been removed.
+The signal "sim1/dds_cos/sig000000f7" is sourceless and has been removed.
+The signal "sim1/dds_cos/sig000000f6" is sourceless and has been removed.
+The signal "sim1/dds_cos/sig000000f5" is sourceless and has been removed.
+The signal "sim1/dds_cos/sig000000f4" is sourceless and has been removed.
+The signal "sim1/dds_cos/sig000000f3" is sourceless and has been removed.
+The signal "sim1/dds_cos/sig000000f2" is sourceless and has been removed.
+The signal "sim1/dds_cos/sig000000f1" is sourceless and has been removed.
+The signal "sim1/dds_cos/sig00000159" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk0000018d" (FF) removed.
+The signal "sim1/dds_cos/sig0000015a" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk0000018f" (FF) removed.
+The signal "sim1/dds_cos/sig0000015b" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk00000191" (FF) removed.
+The signal "sim1/dds_cos/sig0000015c" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk00000193" (FF) removed.
+The signal "sim1/dds_cos/sig0000015d" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk00000195" (FF) removed.
+The signal "sim1/dds_cos/sig0000015e" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk00000197" (FF) removed.
+The signal "sim1/dds_cos/sig0000015f" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk00000199" (FF) removed.
+The signal "sim1/dds_cos/sig00000160" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk0000019b" (FF) removed.
+The signal "sim1/dds_cos/sig00000161" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk0000019d" (FF) removed.
+The signal "sim1/dds_cos/sig00000162" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk0000019f" (FF) removed.
+The signal "sim1/dds_cos/sig00000163" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk000001a1" (FF) removed.
+The signal "sim1/dds_cos/sig00000164" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk000001a3" (FF) removed.
+The signal "sim1/dds_cos/sig00000165" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk000001a5" (FF) removed.
+The signal "sim1/dds_cos/sig00000166" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk000001a7" (FF) removed.
+The signal "sim1/dds_cos/sig00000167" is sourceless and has been removed.
+ Sourceless block "sim1/dds_cos/blk000001a9" (FF) removed.
+The signal "dds_am2/sig00000043" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk00000023" (FF) removed.
+  The signal "dds_am2/sig00000064" is sourceless and has been removed.
+The signal "dds_am2/sig00000082" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk000000b7" (XOR) removed.
+  The signal "dds_am2/sig000000a8" is sourceless and has been removed.
+   Sourceless block "dds_am2/blk00000112" (FF) removed.
+    The signal "dds_am2/sig00000121" is sourceless and has been removed.
+     Sourceless block "dds_am2/blk000000e8" (FF) removed.
+      The signal "dds_am2/sig00000107" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk000000b8" (MUX) removed.
+  The signal "dds_am2/sig00000081" is sourceless and has been removed.
+   Sourceless block "dds_am2/blk00000111" (FF) removed.
+    The signal "dds_am2/sig00000122" is sourceless and has been removed.
+     Sourceless block "dds_am2/blk0000013e" (ROM) removed.
+      The signal "dds_am2/sig00000076" is sourceless and has been removed.
+       Sourceless block "dds_am2/blk000000f7" (FF) removed.
+        The signal "dds_am2/sig00000108" is sourceless and has been removed.
+     Sourceless block "dds_am2/blk0000013f" (ROM) removed.
+      The signal "dds_am2/sig00000071" is sourceless and has been removed.
+       Sourceless block "dds_am2/blk0000011a" (ROM) removed.
+        The signal "dds_am2/sig000000c5" is sourceless and has been removed.
+         Sourceless block "dds_am2/blk000000f0" (FF) removed.
+          The signal "dds_am2/sig0000010f" is sourceless and has been removed.
+       Sourceless block "dds_am2/blk0000011b" (ROM) removed.
+        The signal "dds_am2/sig000000c4" is sourceless and has been removed.
+         Sourceless block "dds_am2/blk000000f1" (FF) removed.
+          The signal "dds_am2/sig0000010e" is sourceless and has been removed.
+       Sourceless block "dds_am2/blk0000011f" (ROM) removed.
+        The signal "dds_am2/sig000000c3" is sourceless and has been removed.
+         Sourceless block "dds_am2/blk000000f2" (FF) removed.
+          The signal "dds_am2/sig0000010d" is sourceless and has been removed.
+     Sourceless block "dds_am2/blk0000014a" (ROM) removed.
+      The signal "dds_am2/sig000000c2" is sourceless and has been removed.
+       Sourceless block "dds_am2/blk000000f3" (FF) removed.
+        The signal "dds_am2/sig0000010c" is sourceless and has been removed.
+     Sourceless block "dds_am2/blk0000014b" (ROM) removed.
+      The signal "dds_am2/sig000000c1" is sourceless and has been removed.
+       Sourceless block "dds_am2/blk000000f4" (FF) removed.
+        The signal "dds_am2/sig0000010b" is sourceless and has been removed.
+     Sourceless block "dds_am2/blk0000014c" (ROM) removed.
+      The signal "dds_am2/sig000000c0" is sourceless and has been removed.
+       Sourceless block "dds_am2/blk000000f5" (FF) removed.
+        The signal "dds_am2/sig0000010a" is sourceless and has been removed.
+     Sourceless block "dds_am2/blk0000014d" (ROM) removed.
+      The signal "dds_am2/sig000000bf" is sourceless and has been removed.
+       Sourceless block "dds_am2/blk000000f6" (FF) removed.
+        The signal "dds_am2/sig00000109" is sourceless and has been removed.
+The signal "dds_am2/sig000000af" is sourceless and has been removed.
+The signal "dds_am2/sig00000083" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk000000b9" (XOR) removed.
+  The signal "dds_am2/sig000000a7" is sourceless and has been removed.
+   Sourceless block "dds_am2/blk00000113" (FF) removed.
+    The signal "dds_am2/sig00000120" is sourceless and has been removed.
+     Sourceless block "dds_am2/blk000000e9" (FF) removed.
+      The signal "dds_am2/sig00000106" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk000000ba" (MUX) removed.
+The signal "dds_am2/sig000000ae" is sourceless and has been removed.
+The signal "dds_am2/sig00000084" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk000000bb" (XOR) removed.
+  The signal "dds_am2/sig000000a6" is sourceless and has been removed.
+   Sourceless block "dds_am2/blk00000114" (FF) removed.
+    The signal "dds_am2/sig0000011f" is sourceless and has been removed.
+     Sourceless block "dds_am2/blk000000ea" (FF) removed.
+      The signal "dds_am2/sig00000105" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk000000bc" (MUX) removed.
+The signal "dds_am2/sig000000ad" is sourceless and has been removed.
+The signal "dds_am2/sig00000085" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk000000bd" (XOR) removed.
+  The signal "dds_am2/sig000000a5" is sourceless and has been removed.
+   Sourceless block "dds_am2/blk00000115" (FF) removed.
+    The signal "dds_am2/sig0000011e" is sourceless and has been removed.
+     Sourceless block "dds_am2/blk000000eb" (FF) removed.
+      The signal "dds_am2/sig00000104" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk000000be" (MUX) removed.
+The signal "dds_am2/sig000000ac" is sourceless and has been removed.
+The signal "dds_am2/sig00000086" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk000000bf" (XOR) removed.
+  The signal "dds_am2/sig000000a4" is sourceless and has been removed.
+   Sourceless block "dds_am2/blk00000116" (FF) removed.
+    The signal "dds_am2/sig0000011d" is sourceless and has been removed.
+     Sourceless block "dds_am2/blk000000ec" (FF) removed.
+      The signal "dds_am2/sig00000103" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk000000c0" (MUX) removed.
+The signal "dds_am2/sig000000ab" is sourceless and has been removed.
+The signal "dds_am2/sig00000087" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk000000c1" (XOR) removed.
+  The signal "dds_am2/sig000000a3" is sourceless and has been removed.
+   Sourceless block "dds_am2/blk00000117" (FF) removed.
+    The signal "dds_am2/sig0000011c" is sourceless and has been removed.
+     Sourceless block "dds_am2/blk000000ed" (FF) removed.
+      The signal "dds_am2/sig00000102" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk000000c2" (MUX) removed.
+The signal "dds_am2/sig000000aa" is sourceless and has been removed.
+The signal "dds_am2/sig00000088" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk000000c3" (XOR) removed.
+  The signal "dds_am2/sig000000a2" is sourceless and has been removed.
+   Sourceless block "dds_am2/blk00000118" (FF) removed.
+    The signal "dds_am2/sig0000011b" is sourceless and has been removed.
+     Sourceless block "dds_am2/blk000000ee" (FF) removed.
+      The signal "dds_am2/sig00000101" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk000000c4" (MUX) removed.
+The signal "dds_am2/sig000000a9" is sourceless and has been removed.
+The signal "dds_am2/sig00000146" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk000000c5" (XOR) removed.
+  The signal "dds_am2/sig000000a1" is sourceless and has been removed.
+   Sourceless block "dds_am2/blk00000119" (FF) removed.
+    The signal "dds_am2/sig0000011a" is sourceless and has been removed.
+     Sourceless block "dds_am2/blk000000ef" (FF) removed.
+      The signal "dds_am2/sig00000100" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk000000c6" (MUX) removed.
+The signal "dds_am2/sig0000006e" is sourceless and has been removed.
+The signal "dds_am2/sig000000b6" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk00000101" (FF) removed.
+  The signal "dds_am2/sig0000006f" is sourceless and has been removed.
+The signal "dds_am2/sig000000b5" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk00000102" (FF) removed.
+  The signal "dds_am2/sig00000070" is sourceless and has been removed.
+The signal "dds_am2/sig000000b4" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk00000103" (FF) removed.
+  The signal "dds_am2/sig00000072" is sourceless and has been removed.
+The signal "dds_am2/sig000000b3" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk00000104" (FF) removed.
+  The signal "dds_am2/sig00000073" is sourceless and has been removed.
+The signal "dds_am2/sig000000b2" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk00000105" (FF) removed.
+  The signal "dds_am2/sig00000074" is sourceless and has been removed.
+The signal "dds_am2/sig000000b1" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk00000106" (FF) removed.
+  The signal "dds_am2/sig00000075" is sourceless and has been removed.
+The signal "dds_am2/sig000000b0" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk00000107" (FF) removed.
+  The signal "dds_am2/sig00000123" is sourceless and has been removed.
+The signal "dds_am2/sig00000134" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk00000120" (ROM) removed.
+The signal "dds_am2/sig00000135" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk00000121" (ROM) removed.
+The signal "dds_am2/sig00000136" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk00000122" (ROM) removed.
+The signal "dds_am2/sig00000137" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk00000123" (ROM) removed.
+The signal "dds_am2/sig00000138" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk00000124" (ROM) removed.
+The signal "dds_am2/sig00000139" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk00000125" (ROM) removed.
+The signal "dds_am2/sig0000013a" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk00000126" (ROM) removed.
+The signal "dds_am2/sig0000013b" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk00000127" (ROM) removed.
+The signal "dds_am2/sig0000013c" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk00000128" (ROM) removed.
+The signal "dds_am2/sig0000013d" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk00000129" (ROM) removed.
+The signal "dds_am2/sig0000013e" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk0000012a" (ROM) removed.
+The signal "dds_am2/sig0000013f" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk0000012b" (ROM) removed.
+The signal "dds_am2/sig00000140" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk0000012c" (ROM) removed.
+The signal "dds_am2/sig00000141" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk0000012d" (ROM) removed.
+The signal "dds_am2/sig00000133" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk00000159" (ROM) removed.
+The signal "dds_am2/sig000000ff" is sourceless and has been removed.
+The signal "dds_am2/sig000000fe" is sourceless and has been removed.
+The signal "dds_am2/sig000000fd" is sourceless and has been removed.
+The signal "dds_am2/sig000000fc" is sourceless and has been removed.
+The signal "dds_am2/sig000000fb" is sourceless and has been removed.
+The signal "dds_am2/sig000000fa" is sourceless and has been removed.
+The signal "dds_am2/sig000000f9" is sourceless and has been removed.
+The signal "dds_am2/sig000000f8" is sourceless and has been removed.
+The signal "dds_am2/sig000000f7" is sourceless and has been removed.
+The signal "dds_am2/sig000000f6" is sourceless and has been removed.
+The signal "dds_am2/sig000000f5" is sourceless and has been removed.
+The signal "dds_am2/sig000000f4" is sourceless and has been removed.
+The signal "dds_am2/sig000000f3" is sourceless and has been removed.
+The signal "dds_am2/sig000000f2" is sourceless and has been removed.
+The signal "dds_am2/sig000000f1" is sourceless and has been removed.
+The signal "dds_am2/sig00000159" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk0000018d" (FF) removed.
+The signal "dds_am2/sig0000015a" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk0000018f" (FF) removed.
+The signal "dds_am2/sig0000015b" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk00000191" (FF) removed.
+The signal "dds_am2/sig0000015c" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk00000193" (FF) removed.
+The signal "dds_am2/sig0000015d" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk00000195" (FF) removed.
+The signal "dds_am2/sig0000015e" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk00000197" (FF) removed.
+The signal "dds_am2/sig0000015f" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk00000199" (FF) removed.
+The signal "dds_am2/sig00000160" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk0000019b" (FF) removed.
+The signal "dds_am2/sig00000161" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk0000019d" (FF) removed.
+The signal "dds_am2/sig00000162" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk0000019f" (FF) removed.
+The signal "dds_am2/sig00000163" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk000001a1" (FF) removed.
+The signal "dds_am2/sig00000164" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk000001a3" (FF) removed.
+The signal "dds_am2/sig00000165" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk000001a5" (FF) removed.
+The signal "dds_am2/sig00000166" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk000001a7" (FF) removed.
+The signal "dds_am2/sig00000167" is sourceless and has been removed.
+ Sourceless block "dds_am2/blk000001a9" (FF) removed.
+The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.
+wsts/ram_full_i" is sourceless and has been removed.
+The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+rsts/ram_empty_i" is sourceless and has been removed.
+The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/prog_empty_i" is sourceless and has been removed.
+ Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/prog_empty_i_glue_rst" (ROM) removed.
+  The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/prog_empty_i_glue_rst" is sourceless and has been removed.
+   Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/prog_empty_i" (FF) removed.
+The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_cy<10>" is
+sourceless and has been removed.
+ Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_xor<11>" (XOR)
+removed.
+  The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT<11>" is sourceless and
+has been removed.
+   Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/diff_pntr_pad_11" (FF) removed.
+    The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/diff_pntr_pad<11>" is sourceless and has been removed.
+     Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/_n00631_SW0" (ROM) removed.
+      The signal "fifo_1/N01" is sourceless and has been removed.
+       Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/_n00631" (ROM) removed.
+        The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/_n00631" is sourceless and has been removed.
+       Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/diff_pntr[10]_ram_wr_en_i_AND_17_o1" (ROM) removed.
+        The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/diff_pntr[10]_ram_wr_en_i_AND_17_o" is sourceless and has been removed.
+The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_lut<11>" is
+sourceless and has been removed.
+The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_cy<9>" is
+sourceless and has been removed.
+ Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_xor<10>" (XOR)
+removed.
+  The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT<10>" is sourceless and
+has been removed.
+   Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/diff_pntr_pad_10" (FF) removed.
+    The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/diff_pntr_pad<10>" is sourceless and has been removed.
+ Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_cy<10>" (MUX)
+removed.
+The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_lut<10>" is
+sourceless and has been removed.
+The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_cy<8>" is
+sourceless and has been removed.
+ Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_xor<9>" (XOR)
+removed.
+  The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT<9>" is sourceless and
+has been removed.
+   Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/diff_pntr_pad_9" (FF) removed.
+    The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/diff_pntr_pad<9>" is sourceless and has been removed.
+ Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_cy<9>" (MUX)
+removed.
+The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_lut<9>" is
+sourceless and has been removed.
+The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_cy<7>" is
+sourceless and has been removed.
+ Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_xor<8>" (XOR)
+removed.
+  The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT<8>" is sourceless and
+has been removed.
+   Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/diff_pntr_pad_8" (FF) removed.
+    The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/diff_pntr_pad<8>" is sourceless and has been removed.
+ Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_cy<8>" (MUX)
+removed.
+The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_lut<8>" is
+sourceless and has been removed.
+The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_cy<6>" is
+sourceless and has been removed.
+ Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_xor<7>" (XOR)
+removed.
+  The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT<7>" is sourceless and
+has been removed.
+   Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/diff_pntr_pad_7" (FF) removed.
+    The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/diff_pntr_pad<7>" is sourceless and has been removed.
+ Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_cy<7>" (MUX)
+removed.
+The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_lut<7>" is
+sourceless and has been removed.
+The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_cy<5>" is
+sourceless and has been removed.
+ Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_xor<6>" (XOR)
+removed.
+  The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT<6>" is sourceless and
+has been removed.
+   Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/diff_pntr_pad_6" (FF) removed.
+    The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/diff_pntr_pad<6>" is sourceless and has been removed.
+ Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_cy<6>" (MUX)
+removed.
+The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_lut<6>" is
+sourceless and has been removed.
+The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_cy<4>" is
+sourceless and has been removed.
+ Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_xor<5>" (XOR)
+removed.
+  The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT<5>" is sourceless and
+has been removed.
+   Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/diff_pntr_pad_5" (FF) removed.
+    The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/diff_pntr_pad<5>" is sourceless and has been removed.
+ Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_cy<5>" (MUX)
+removed.
+The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_lut<5>" is
+sourceless and has been removed.
+The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_cy<3>" is
+sourceless and has been removed.
+ Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_xor<4>" (XOR)
+removed.
+  The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT<4>" is sourceless and
+has been removed.
+   Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/diff_pntr_pad_4" (FF) removed.
+    The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/diff_pntr_pad<4>" is sourceless and has been removed.
+ Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_cy<4>" (MUX)
+removed.
+The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_lut<4>" is
+sourceless and has been removed.
+The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_cy<2>" is
+sourceless and has been removed.
+ Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_xor<3>" (XOR)
+removed.
+  The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT<3>" is sourceless and
+has been removed.
+   Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/diff_pntr_pad_3" (FF) removed.
+    The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/diff_pntr_pad<3>" is sourceless and has been removed.
+ Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_cy<3>" (MUX)
+removed.
+The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_lut<3>" is
+sourceless and has been removed.
+The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_cy<1>" is
+sourceless and has been removed.
+ Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_xor<2>" (XOR)
+removed.
+  The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT<2>" is sourceless and
+has been removed.
+   Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/diff_pntr_pad_2" (FF) removed.
+    The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/diff_pntr_pad<2>" is sourceless and has been removed.
+     Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/_n00631_SW1" (ROM) removed.
+      The signal "fifo_1/N4" is sourceless and has been removed.
+ Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_cy<2>" (MUX)
+removed.
+The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_lut<2>" is
+sourceless and has been removed.
+The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_cy<0>" is
+sourceless and has been removed.
+ Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_xor<1>" (XOR)
+removed.
+  The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT<1>" is sourceless and
+has been removed.
+   Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/diff_pntr_pad_1" (FF) removed.
+    The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/diff_pntr_pad<1>" is sourceless and has been removed.
+ Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_cy<1>" (MUX)
+removed.
+The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_lut<1>" is
+sourceless and has been removed.
+The signal
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/wr_pntr_rd_pad<0>" is sourceless and has been removed.
+ Sourceless block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_cy<0>" (MUX)
+removed.
+Unused block "dds_am2/blk00000044/blk000000a4" (MUX) removed.
+Unused block "dds_am2/blk00000100" (FF) removed.
+Unused block "dds_am2/blk0000018c" (SRLC16E) removed.
+Unused block "dds_am2/blk0000018e" (SRLC16E) removed.
+Unused block "dds_am2/blk00000190" (SRLC16E) removed.
+Unused block "dds_am2/blk00000192" (SRLC16E) removed.
+Unused block "dds_am2/blk00000194" (SRLC16E) removed.
+Unused block "dds_am2/blk00000196" (SRLC16E) removed.
+Unused block "dds_am2/blk00000198" (SRLC16E) removed.
+Unused block "dds_am2/blk0000019a" (SRLC16E) removed.
+Unused block "dds_am2/blk0000019c" (SRLC16E) removed.
+Unused block "dds_am2/blk0000019e" (SRLC16E) removed.
+Unused block "dds_am2/blk000001a0" (SRLC16E) removed.
+Unused block "dds_am2/blk000001a2" (SRLC16E) removed.
+Unused block "dds_am2/blk000001a4" (SRLC16E) removed.
+Unused block "dds_am2/blk000001a6" (SRLC16E) removed.
+Unused block "dds_am2/blk000001a8" (SRLC16E) removed.
+Unused block "dds_mod_fm/blk00000001" (ONE) removed.
+Unused block "dds_mod_fm/blk00000002" (ZERO) removed.
+Unused block "dds_mod_fm/blk00000003" (DSP48A1) removed.
+Unused block "dds_mod_fm/blk00000005" (FF) removed.
+Unused block "dds_mod_fm/blk00000006" (FF) removed.
+Unused block "dds_mod_fm/blk00000007" (FF) removed.
+Unused block "dds_mod_fm/blk00000008" (FF) removed.
+Unused block "dds_mod_fm/blk00000009" (FF) removed.
+Unused block "dds_mod_fm/blk0000000a" (FF) removed.
+Unused block "dds_mod_fm/blk0000000b" (FF) removed.
+Unused block "dds_mod_fm/blk0000000c" (FF) removed.
+Unused block "dds_mod_fm/blk0000000d" (FF) removed.
+Unused block "dds_mod_fm/blk0000000e" (FF) removed.
+Unused block "dds_mod_fm/blk0000000f" (FF) removed.
+Unused block "dds_mod_fm/blk00000010" (FF) removed.
+Unused block "dds_mod_fm/blk00000011" (FF) removed.
+Unused block "dds_mod_fm/blk00000012" (FF) removed.
+Unused block "dds_mod_fm/blk00000013" (FF) removed.
+Unused block "dds_mod_fm/blk00000014" (FF) removed.
+Unused block "dds_mod_fm/blk00000015" (FF) removed.
+Unused block "dds_mod_fm/blk00000016" (FF) removed.
+Unused block "dds_mod_fm/blk00000017" (FF) removed.
+Unused block "dds_mod_fm/blk00000018" (FF) removed.
+Unused block "dds_mod_fm/blk00000019" (FF) removed.
+Unused block "dds_mod_fm/blk0000001a" (FF) removed.
+Unused block "dds_mod_fm/blk0000001b" (FF) removed.
+Unused block "dds_mod_fm/blk0000001c" (FF) removed.
+Unused block "dds_mod_fm/blk0000001d" (FF) removed.
+Unused block "dds_mod_fm/blk0000001e" (FF) removed.
+Unused block "dds_mod_fm/blk0000001f" (FF) removed.
+Unused block "dds_mod_fm/blk00000020" (FF) removed.
+Unused block "dds_mod_fm/blk00000021" (FF) removed.
+Unused block "dds_mod_fm/blk00000022" (FF) removed.
+Unused block "dds_mod_fm/blk00000023" (FF) removed.
+Unused block "dds_mod_fm/blk00000024" (FF) removed.
+Unused block "dds_mod_fm/blk00000067" (FF) removed.
+Unused block "dds_mod_fm/blk0000006c" (RAMB8BWER) removed.
+Unused block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_lut<10>" (ROM)
+removed.
+Unused block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_lut<11>" (ROM)
+removed.
+Unused block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_lut<1>" (ROM)
+removed.
+Unused block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_lut<2>" (ROM)
+removed.
+Unused block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_lut<3>" (ROM)
+removed.
+Unused block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_lut<4>" (ROM)
+removed.
+Unused block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_lut<5>" (ROM)
+removed.
+Unused block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_lut<6>" (ROM)
+removed.
+Unused block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_lut<7>" (ROM)
+removed.
+Unused block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_lut<8>" (ROM)
+removed.
+Unused block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/Madd_wr_pntr_rd_pad[11]_rd_pntr_inv_pad[11]_add_2_OUT_lut<9>" (ROM)
+removed.
+Unused block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+gpe.rdpe/wr_pntr_rd_pad<0>1" (ROM) removed.
+Unused block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.
+rsts/ram_empty_i" (FF) removed.
+Unused block
+"fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.
+wsts/ram_full_i" (FF) removed.
+Unused block "sim1/dds_cos/blk00000044/blk000000a4" (MUX) removed.
+Unused block "sim1/dds_cos/blk00000100" (FF) removed.
+Unused block "sim1/dds_cos/blk0000018c" (SRLC16E) removed.
+Unused block "sim1/dds_cos/blk0000018e" (SRLC16E) removed.
+Unused block "sim1/dds_cos/blk00000190" (SRLC16E) removed.
+Unused block "sim1/dds_cos/blk00000192" (SRLC16E) removed.
+Unused block "sim1/dds_cos/blk00000194" (SRLC16E) removed.
+Unused block "sim1/dds_cos/blk00000196" (SRLC16E) removed.
+Unused block "sim1/dds_cos/blk00000198" (SRLC16E) removed.
+Unused block "sim1/dds_cos/blk0000019a" (SRLC16E) removed.
+Unused block "sim1/dds_cos/blk0000019c" (SRLC16E) removed.
+Unused block "sim1/dds_cos/blk0000019e" (SRLC16E) removed.
+Unused block "sim1/dds_cos/blk000001a0" (SRLC16E) removed.
+Unused block "sim1/dds_cos/blk000001a2" (SRLC16E) removed.
+Unused block "sim1/dds_cos/blk000001a4" (SRLC16E) removed.
+Unused block "sim1/dds_cos/blk000001a6" (SRLC16E) removed.
+Unused block "sim1/dds_cos/blk000001a8" (SRLC16E) removed.
+
+Optimized Block(s):
+TYPE 		BLOCK
+GND 		XST_GND
+VCC 		XST_VCC
+VCC 		dds_am2/blk00000001
+GND 		dds_am2/blk00000002
+GND 		dds_am2/blk00000044/blk00000045
+GND
+		fifo_1/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbm
+g.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/XST_GND
+GND 		fifo_1/XST_GND
+VCC 		fifo_1/XST_VCC
+LUT2 		m1/ADDERTREE_INTERNAL_Madd21
+   optimized to 0
+LUT2 		m1/ADDERTREE_INTERNAL_Madd210
+   optimized to 0
+LUT2 		m1/ADDERTREE_INTERNAL_Madd211
+   optimized to 0
+LUT2 		m1/ADDERTREE_INTERNAL_Madd212
+   optimized to 0
+LUT2 		m1/ADDERTREE_INTERNAL_Madd213
+   optimized to 0
+LUT2 		m1/ADDERTREE_INTERNAL_Madd214
+   optimized to 0
+LUT2 		m1/ADDERTREE_INTERNAL_Madd22
+   optimized to 0
+LUT2 		m1/ADDERTREE_INTERNAL_Madd23
+   optimized to 0
+LUT2 		m1/ADDERTREE_INTERNAL_Madd24
+   optimized to 0
+LUT2 		m1/ADDERTREE_INTERNAL_Madd25
+   optimized to 0
+LUT2 		m1/ADDERTREE_INTERNAL_Madd26
+   optimized to 0
+LUT2 		m1/ADDERTREE_INTERNAL_Madd27
+   optimized to 0
+LUT2 		m1/ADDERTREE_INTERNAL_Madd28
+   optimized to 0
+LUT2 		m1/ADDERTREE_INTERNAL_Madd29
+   optimized to 0
+VCC 		sim1/dds_cos/blk00000001
+GND 		sim1/dds_cos/blk00000002
+FDE 		sim1/dds_cos/blk00000003
+   optimized to 0
+FDE 		sim1/dds_cos/blk00000004
+   optimized to 0
+FDE 		sim1/dds_cos/blk00000005
+   optimized to 0
+FDE 		sim1/dds_cos/blk00000006
+   optimized to 0
+FDE 		sim1/dds_cos/blk00000007
+   optimized to 0
+FDE 		sim1/dds_cos/blk00000008
+   optimized to 0
+FDE 		sim1/dds_cos/blk00000009
+   optimized to 0
+FDE 		sim1/dds_cos/blk0000000a
+   optimized to 0
+FDE 		sim1/dds_cos/blk0000000b
+   optimized to 0
+FDE 		sim1/dds_cos/blk0000000c
+   optimized to 0
+FDE 		sim1/dds_cos/blk0000000d
+   optimized to 0
+FDE 		sim1/dds_cos/blk0000000e
+   optimized to 0
+FDE 		sim1/dds_cos/blk0000000f
+   optimized to 0
+FDE 		sim1/dds_cos/blk00000010
+   optimized to 0
+FDE 		sim1/dds_cos/blk0000001c
+   optimized to 0
+GND 		sim1/dds_cos/blk00000044/blk00000045
+
+To enable printing of redundant blocks removed and signals merged, set the
+detailed map report option and rerun map.
+
+Section 11 - Timing Report
+--------------------------
+INFO:Timing:3284 - This timing report was generated using estimated delay 
+   information.  For accurate numbers, please refer to the post Place and Route 
+   timing report.
+Number of Timing Constraints that were not applied: 1
+
+Asterisk (*) preceding a constraint indicates it was not met.
+   This may be due to a setup or hold violation.
+
+----------------------------------------------------------------------------------------------------------
+  Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
+                                            |             |    Slack   | Achievable | Errors |    Score   
+----------------------------------------------------------------------------------------------------------
+* TS_clknetwork_clkfx = PERIOD TIMEGRP "clk | SETUP       |    -2.909ns|     6.242ns|      51|       99753
+  network_clkfx" TS_clk / 6 HIGH 50%        | HOLD        |    -0.278ns|            |       2|         465
+----------------------------------------------------------------------------------------------------------
+* TS_clknetwork_clkdv = PERIOD TIMEGRP "clk | SETUP       |     8.221ns|     7.116ns|       0|           0
+  network_clkdv" TS_clk * 2 HIGH 50%        | HOLD        |    -0.293ns|            |     114|       29763
+----------------------------------------------------------------------------------------------------------
+* TS_clknetwork_clk2x = PERIOD TIMEGRP "clk | SETUP       |     6.251ns|     3.749ns|       0|           0
+  network_clk2x" TS_clk / 2 HIGH 50%        | HOLD        |    -0.228ns|            |      50|        8272
+----------------------------------------------------------------------------------------------------------
+  TS_clk = PERIOD TIMEGRP "clk" 20 ns HIGH  | MINLOWPULSE |    12.000ns|     8.000ns|       0|           0
+  50%                                       |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+
+
+Derived Constraint Report
+Review Timing Report for more details on the following derived constraints.
+To create a Timing Report, run "trce -v 12 -fastpaths -o design_timing_report design.ncd design.pcf"
+or "Run Timing Analysis" from Timing Analyzer (timingan).
+Derived Constraints for TS_clk
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|                               |   Period    |       Actual Period       |      Timing Errors        |      Paths Analyzed       |
+|           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
+|                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|TS_clk                         |     20.000ns|      8.000ns|     37.452ns|            0|          217|            0|       109668|
+| TS_clknetwork_clk2x           |     10.000ns|      3.749ns|          N/A|           50|            0|         2656|            0|
+| TS_clknetwork_clkfx           |      3.333ns|      6.242ns|          N/A|           53|            0|        52339|            0|
+| TS_clknetwork_clkdv           |     40.000ns|      7.116ns|          N/A|          114|            0|        54673|            0|
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+3 constraints not met.
+
+
+
+Section 6 - IOB Properties
+--------------------------
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
+|                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| CS_AT45                            | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| FMOD_2                             | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| ID<0>                              | IOB              | OUTPUT    | LVCMOS33             |       | 24       | SLOW |              |          |          |
+| ID<1>                              | IOB              | OUTPUT    | LVCMOS33             |       | 24       | SLOW |              |          |          |
+| ID<2>                              | IOB              | OUTPUT    | LVCMOS33             |       | 24       | SLOW |              |          |          |
+| ID<3>                              | IOB              | OUTPUT    | LVCMOS33             |       | 24       | SLOW |              |          |          |
+| ID<4>                              | IOB              | OUTPUT    | LVCMOS33             |       | 24       | SLOW |              |          |          |
+| ID<5>                              | IOB              | OUTPUT    | LVCMOS33             |       | 24       | SLOW |              |          |          |
+| ID<6>                              | IOB              | OUTPUT    | LVCMOS33             |       | 24       | SLOW |              |          |          |
+| ID<7>                              | IOB              | OUTPUT    | LVCMOS33             |       | 24       | SLOW |              |          |          |
+| MISO_AT45                          | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| MOSI_AT45                          | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| RESET_AT45                         | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| RZV4                               | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| RZV5                               | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| RZV7                               | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| RZV8                               | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| RZV11                              | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| RZV12                              | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| RZV29                              | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| SCLK_AT45                          | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| UPR_CH                             | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| clk                                | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| rx_ftdi_1                          | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| rxd_ftdi_2                         | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_a<0>                          | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_a<1>                          | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_a<2>                          | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_a<3>                          | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_a<4>                          | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_a<5>                          | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_a<6>                          | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_a<7>                          | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_a<8>                          | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_a<9>                          | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_a<10>                         | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_a<11>                         | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_a<12>                         | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_a<13>                         | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_a<14>                         | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_a<15>                         | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_a<16>                         | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_a<17>                         | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_a<18>                         | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_ce0                           | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_d<0>                          | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_d<1>                          | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_d<2>                          | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_d<3>                          | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_d<4>                          | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_d<5>                          | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_d<6>                          | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_d<7>                          | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_d<8>                          | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_d<9>                          | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_d<10>                         | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_d<11>                         | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_d<12>                         | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_d<13>                         | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_d<14>                         | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_d<15>                         | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| sram_lb                            | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_oe                            | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_ub                            | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| sram_we                            | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| tx_ftdi_1                          | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| txd_ftdi_2                         | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 7 - RPMs
+----------------
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Area Group Information
+----------------------
+
+  No area groups were found in this design.
+
+----------------------
+
+Section 10 - Timing Report
+--------------------------
+A logic-level (pre-route) timing report can be generated by using Xilinx static
+timing analysis tools, Timing Analyzer (GUI) or TRCE (command line), with the
+mapped NCD and PCF files. Please note that this timing report will be generated
+using estimated delay information. For accurate numbers, please generate a
+timing report with the post Place and Route NCD file.
+
+For more information about the Timing Analyzer, consult the Xilinx Timing
+Analyzer Reference Manual; for more information about TRCE, consult the Xilinx
+Command Line Tools User Guide "TRACE" chapter.
+
+Section 11 - Configuration String Details
+-----------------------------------------
+Use the "-detail" map option to print out Configuration Strings
+
+Section 12 - Control Set Information
+------------------------------------
+Use the "-detail" map option to print out Control Set Information.
+
+Section 13 - Utilization by Hierarchy
+-------------------------------------
+Use the "-detail" map option to print out the Utilization by Hierarchy section.

@@ -1,0 +1,17 @@
+[Inputs]
+clk
+rbyte_ready
+uart_busy
+rst
+=rx_data[7:0]=
+[Outputs]
+send
+switch
+led1
+=tx_data[7:0]=
+=fm_freq[31:0]=
+=am_freq[31:0]=
+[BiDir]
+[ATTRIBUTES]
+VeriModel master_control
+

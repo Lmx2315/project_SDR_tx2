@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbol version="7" name="uart">
+    <symboltype>BLOCK</symboltype>
+    <timestamp>2015-8-18T8:35:41</timestamp>
+    <attr value="uart" name="VeriModel" />
+    <pin polarity="Input" x="0" y="1120" name="rst_in" />
+    <pin polarity="Input" x="0" y="1184" name="clk_in" />
+    <pin polarity="Input" x="0" y="1248" name="send_in" />
+    <pin polarity="Input" x="0" y="1312" name="rxd_in" />
+    <pin polarity="Input" x="0" y="1376" name="data_in(7:0)" />
+    <pin polarity="Output" x="384" y="1120" name="rx_ready_out" />
+    <pin polarity="Output" x="384" y="1184" name="tx_ready_out" />
+    <pin polarity="Output" x="384" y="1248" name="txd_out" />
+    <pin polarity="Output" x="384" y="1312" name="data_out(7:0)" />
+    <graph>
+        <attrtext style="alignment:BCENTER;fontsize:56;fontname:Arial" attrname="SymbolName" x="192" y="1108" type="symbol" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="1120" type="pin rst_in" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="1184" type="pin clk_in" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="1248" type="pin send_in" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="1312" type="pin rxd_in" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="1376" type="pin data_in(7:0)" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="1120" type="pin rx_ready_out" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="1184" type="pin tx_ready_out" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="1248" type="pin txd_out" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="1312" type="pin data_out(7:0)" />
+        <line x2="0" y1="1120" y2="1120" x1="64" />
+        <line x2="0" y1="1184" y2="1184" x1="64" />
+        <line x2="0" y1="1248" y2="1248" x1="64" />
+        <line x2="0" y1="1312" y2="1312" x1="64" />
+        <rect width="64" x="0" y="1364" height="24" />
+        <line x2="0" y1="1376" y2="1376" x1="64" />
+        <line x2="384" y1="1120" y2="1120" x1="320" />
+        <line x2="384" y1="1184" y2="1184" x1="320" />
+        <line x2="384" y1="1248" y2="1248" x1="320" />
+        <rect width="64" x="320" y="1300" height="24" />
+        <line x2="384" y1="1312" y2="1312" x1="320" />
+        <rect width="256" x="64" y="1104" height="304" />
+    </graph>
+</symbol>

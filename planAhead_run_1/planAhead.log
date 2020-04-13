@@ -1,0 +1,102 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Wed Dec 19 12:43:11 2018
+# Process ID: 1844
+# Log file: C:/Work/Sokolov_SDR_TX_v2/planAhead_run_1/planAhead.log
+# Journal file: C:/Work/Sokolov_SDR_TX_v2/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Device 21-36] Loading parts and site information from C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source C:/Work/Sokolov_SDR_TX_v2/pa.fromHdl.tcl
+# create_project -name Sokolov_SDR_TX_v2 -dir "C:/Work/Sokolov_SDR_TX_v2/planAhead_run_1" -part xc6slx9tqg144-3
+# set_param project.pinAheadLayout yes
+# set srcset [get_property srcset [current_run -impl]]
+# set_property target_constrs_file "top.ucf" [current_fileset -constrset]
+Adding file 'C:/Work/Sokolov_SDR_TX_v2/top.ucf' to fileset 'constrs_1'
+# set hdlfile [add_files [list {ipcore_dir/dcm1.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# add_files [list {ipcore_dir/dds1.ngc}]
+# set hdlfile [add_files [list {uart4.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {tst_led.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {rst.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {master_control.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {ipcore_dir/dds1.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {dds_out.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {dds_fm.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {top.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set_property top top $srcset
+# add_files [list {top.ucf}] -fileset [get_property constrset [current_run]]
+# add_files [list {ipcore_dir/dds1.ncf}] -fileset [get_property constrset [current_run]]
+# open_rtl_design -part xc6slx9tqg144-3
+Using Verific elaboration
+Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Analyzing Verilog file "C:/Work/Sokolov_SDR_TX_v2/uart4.v" into library work
+Analyzing Verilog file "C:/Work/Sokolov_SDR_TX_v2/tst_led.v" into library work
+Analyzing Verilog file "C:/Work/Sokolov_SDR_TX_v2/rst.v" into library work
+Analyzing Verilog file "C:/Work/Sokolov_SDR_TX_v2/master_control.v" into library work
+Analyzing Verilog file "C:/Work/Sokolov_SDR_TX_v2/ipcore_dir/dds1.v" into library work
+Analyzing Verilog file "C:/Work/Sokolov_SDR_TX_v2/ipcore_dir/dcm1.v" into library work
+Analyzing Verilog file "C:/Work/Sokolov_SDR_TX_v2/dds_out.v" into library work
+Analyzing Verilog file "C:/Work/Sokolov_SDR_TX_v2/dds_fm.v" into library work
+Analyzing Verilog file "C:/Work/Sokolov_SDR_TX_v2/top.v" into library work
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design dds1.ngc ...
+WARNING:NetListWriters:298 - No output is written to dds1.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file dds1.edif ...
+ngc2edif: Total memory usage is 79208 kilobytes
+
+Reading core file 'C:/Work/Sokolov_SDR_TX_v2/ipcore_dir/dds1.ngc' for (cell view 'dds1', library 'work', file 'dds1.v')
+Parsing EDIF File [./.Xil/PlanAhead-1844-lmx2315/ngc2edif/dds1.edif]
+Finished Parsing EDIF File [./.Xil/PlanAhead-1844-lmx2315/ngc2edif/dds1.edif]
+Loading clock regions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/ClockRegion.xml
+Loading clock buffers from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/ClockBuffers.xml
+Loading package pin functions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/PinFunctions.xml...
+Loading package from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/tqg144/Package.xml
+Loading io standards from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/spartan6/IOStandards.xml
+Loading device configuration modes from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/ConfigModes.xml
+Loading list of drcs for the architecture : C:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/spartan6/drc.xml
+Parsing UCF File [C:/Work/Sokolov_SDR_TX_v2/top.ucf]
+Finished Parsing UCF File [C:/Work/Sokolov_SDR_TX_v2/top.ucf]
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Phase 0 | Netlist Checksum: f673e062
+open_rtl_design: Time (s): elapsed = 00:00:15 . Memory (MB): peak = 704.152 ; gain = 193.938
+update_compile_order -fileset sim_1
+exit
+ERROR: [PlanAhead 12-106] *** Exception: ui.h.b: Found deleted key in HTclEventBroker. Verify if the classes listed here call cleanup()
+HTclEvent: SIGNAL_MODIFY   Classes: ui.views.aR 
+HTclEvent: DEBUG_PORT_CONFIG_CHANGE   Classes: ui.views.aR 
+HTclEvent: DEBUG_CORE_CONFIG_CHANGE   Classes: ui.views.aR 
+HTclEvent: SIGNAL_BUS_MODIFY   Classes: ui.views.aR 
+ (See C:/Work/Sokolov_SDR_TX_v2\planAhead_pid1844.debug)
+ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
+INFO: [Common 17-206] Exiting PlanAhead at Wed Dec 19 12:45:36 2018...
+INFO: [Common 17-83] Releasing license: PlanAhead

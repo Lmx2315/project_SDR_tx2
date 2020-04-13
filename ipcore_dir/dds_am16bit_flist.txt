@@ -1,0 +1,15 @@
+# Output products list for <dds_am16bit>
+_xmsgs\pn_parser.xmsgs
+dds_am16bit.asy
+dds_am16bit.gise
+dds_am16bit.ngc
+dds_am16bit.sym
+dds_am16bit.v
+dds_am16bit.veo
+dds_am16bit.xco
+dds_am16bit.xise
+dds_am16bit\doc\dds_compiler_v4_0_vinfo.html
+dds_am16bit\doc\dds_ds558.pdf
+dds_am16bit_flist.txt
+dds_am16bit_readme.txt
+dds_am16bit_xmdf.tcl

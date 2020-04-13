@@ -1,0 +1,2 @@
+vhdtdtfi -lib work C:/Work/Sokolov_SDR_TX_v2/master_control.v -lang verilog -prj Sokolov_SDR_TX_v2 -o master_control.spl -module master_control -template C:/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 master_control.spl C:/Work/Sokolov_SDR_TX_v2/master_control.sym 

@@ -1,0 +1,58 @@
+Release 14.7 ngdbuild P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Command Line: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
+-intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc top.ucf -p
+xc6slx9-tqg144-3 top.ngc top.ngd
+
+Reading NGO file "C:/Work/Sokolov_SDR_TX_v2/top.ngc" ...
+Loading design module "ipcore_dir/dds1.ngc"...
+Loading design module "ipcore_dir/dds_am16bit.ngc"...
+Loading design module "ipcore_dir/fifo.ngc"...
+Gathering constraint information from source properties...
+Done.
+
+Annotating constraints to design from ucf file "top.ucf" ...
+Resolving constraint associations...
+Checking Constraint Associations...
+INFO:ConstraintSystem:178 - TNM 'clk', used in period specification 'TS_clk',
+   was traced into DCM_SP instance clknetwork/dcm_sp_inst. The following new TNM
+   groups and period specifications were generated at the DCM_SP output(s): 
+   CLK2X: <TIMESPEC TS_clknetwork_clk2x = PERIOD "clknetwork_clk2x" TS_clk / 2
+   HIGH 50%>
+
+INFO:ConstraintSystem:178 - TNM 'clk', used in period specification 'TS_clk',
+   was traced into DCM_SP instance clknetwork/dcm_sp_inst. The following new TNM
+   groups and period specifications were generated at the DCM_SP output(s): 
+   CLKFX: <TIMESPEC TS_clknetwork_clkfx = PERIOD "clknetwork_clkfx" TS_clk / 6
+   HIGH 50%>
+
+INFO:ConstraintSystem:178 - TNM 'clk', used in period specification 'TS_clk',
+   was traced into DCM_SP instance clknetwork/dcm_sp_inst. The following new TNM
+   groups and period specifications were generated at the DCM_SP output(s): 
+   CLKDV: <TIMESPEC TS_clknetwork_clkdv = PERIOD "clknetwork_clkdv" TS_clk * 2
+   HIGH 50%>
+
+Done...
+
+Checking expanded design ...
+WARNING:NgdBuild:470 - bidirect pad net 'sram_d<15>' has no legal driver
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   1
+
+Total memory usage is 184932 kilobytes
+
+Writing NGD file "top.ngd" ...
+Total REAL time to NGDBUILD completion:  5 sec
+Total CPU time to NGDBUILD completion:   5 sec
+
+Writing NGDBUILD log file "top.bld"...

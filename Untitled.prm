@@ -1,0 +1,17 @@
+PROMGEN: Xilinx Prom Generator P.20131013
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+promgen -w -p mcs -c FF -o C:\Work\Sokolov_SDR_TX_v2//Untitled -x xcf04s -u 00000000 C:/Work/Sokolov_SDR_TX_v2/top.bit 
+
+PROM C:\Work\Sokolov_SDR_TX_v2\Untitled.prm map: Fri Dec 28 17:20:13 2018
+
+Calculating PROM checksum with fill value ff
+
+Format        Mcs86 (32-bit)
+Size          512K
+PROM start    0000:0000
+PROM end      0007:ffff
+PROM checksum 0377663d
+
+        Addr1        Addr2                     Date File(s)
+    0000:0000    0005:327b     Dec 28 17:19:10 2018 C:/Work/Sokolov_SDR_TX_v2/top.bit

@@ -1,0 +1,233 @@
+NET "clk" LOC = P134;
+NET "clk" IOSTANDARD = LVCMOS33;
+
+NET "rx_ftdi_1" LOC = P43;
+NET "rx_ftdi_1" IOSTANDARD = LVCMOS33;
+
+NET "tx_ftdi_1" LOC = P44;
+NET "tx_ftdi_1" IOSTANDARD = LVCMOS33;
+
+NET "rxd_ftdi_2" LOC = P41;
+NET "rxd_ftdi_2" IOSTANDARD = LVCMOS33;
+
+NET "txd_ftdi_2" LOC = P40;
+NET "txd_ftdi_2" IOSTANDARD = LVCMOS33;
+
+NET "sram_a[0]" LOC = P139;
+NET "sram_a[0]" IOSTANDARD = LVCMOS33;
+
+NET "sram_a[1]" LOC = P140;
+NET "sram_a[1]" IOSTANDARD = LVCMOS33;
+
+NET "sram_a[2]" LOC = P141;
+NET "sram_a[2]" IOSTANDARD = LVCMOS33;
+
+NET "sram_a[3]" LOC = P142;
+NET "sram_a[3]" IOSTANDARD = LVCMOS33;
+
+NET "sram_a[4]" LOC = P144;
+NET "sram_a[4]" IOSTANDARD = LVCMOS33;
+
+NET "sram_a[5]" LOC = P75;
+NET "sram_a[5]" IOSTANDARD = LVCMOS33;
+
+NET "sram_a[6]" LOC = P78;
+NET "sram_a[6]" IOSTANDARD = LVCMOS33;
+
+NET "sram_a[7]" LOC = P79;
+NET "sram_a[7]" IOSTANDARD = LVCMOS33;
+
+NET "sram_a[8]" LOC = P95;
+NET "sram_a[8]" IOSTANDARD = LVCMOS33;
+
+NET "sram_a[9]" LOC = P97;
+NET "sram_a[9]" IOSTANDARD = LVCMOS33;
+
+NET "sram_a[10]" LOC = P98;
+NET "sram_a[10]" IOSTANDARD = LVCMOS33;
+
+NET "sram_a[11]" LOC = P99;
+NET "sram_a[11]" IOSTANDARD = LVCMOS33;
+
+NET "sram_a[12]" LOC = P100;
+NET "sram_a[12]" IOSTANDARD = LVCMOS33;
+
+NET "sram_a[13]" LOC = P101;
+NET "sram_a[13]" IOSTANDARD = LVCMOS33;
+
+NET "sram_a[14]" LOC = P105;
+NET "sram_a[14]" IOSTANDARD = LVCMOS33;
+
+NET "sram_a[15]" LOC = P104;
+NET "sram_a[15]" IOSTANDARD = LVCMOS33;
+
+NET "sram_a[16]" LOC = P102;
+NET "sram_a[16]" IOSTANDARD = LVCMOS33;
+
+NET "sram_a[17]" LOC = P111;
+NET "sram_a[17]" IOSTANDARD = LVCMOS33;
+
+NET "sram_a[18]" LOC = P112;
+NET "sram_a[18]" IOSTANDARD = LVCMOS33;
+
+
+
+NET "sram_d[0]" LOC = P137;
+NET "sram_d[0]" IOSTANDARD = LVCMOS33;
+
+NET "sram_d[1]" LOC = P121;
+NET "sram_d[1]" IOSTANDARD = LVCMOS33;
+
+NET "sram_d[2]" LOC = P120;
+NET "sram_d[2]" IOSTANDARD = LVCMOS33;
+
+NET "sram_d[3]" LOC = P119;
+NET "sram_d[3]" IOSTANDARD = LVCMOS33;
+
+NET "sram_d[4]" LOC = P118;
+NET "sram_d[4]" IOSTANDARD = LVCMOS33;
+
+NET "sram_d[5]" LOC = P117;
+NET "sram_d[5]" IOSTANDARD = LVCMOS33;
+
+NET "sram_d[6]" LOC = P116;
+NET "sram_d[6]" IOSTANDARD = LVCMOS33;
+
+NET "sram_d[7]" LOC = P114;
+NET "sram_d[7]" IOSTANDARD = LVCMOS33;
+
+NET "sram_d[8]" LOC = P94;
+NET "sram_d[8]" IOSTANDARD = LVCMOS33;
+
+NET "sram_d[9]" LOC = P93;
+NET "sram_d[9]" IOSTANDARD = LVCMOS33;
+
+NET "sram_d[10]" LOC = P92;
+NET "sram_d[10]" IOSTANDARD = LVCMOS33;
+
+NET "sram_d[11]" LOC = P88;
+NET "sram_d[11]" IOSTANDARD = LVCMOS33;
+
+NET "sram_d[12]" LOC = P87;
+NET "sram_d[12]" IOSTANDARD = LVCMOS33;
+
+NET "sram_d[13]" LOC = P84;
+NET "sram_d[13]" IOSTANDARD = LVCMOS33;
+
+NET "sram_d[14]" LOC = P85;
+NET "sram_d[14]" IOSTANDARD = LVCMOS33;
+
+NET "sram_d[15]" LOC = P83;
+NET "sram_d[15]" IOSTANDARD = LVCMOS33;
+
+
+
+NET "sram_ce0" LOC = P138;
+NET "sram_ce0" IOSTANDARD = LVCMOS33;
+
+NET "sram_we" LOC = P115;
+NET "sram_we" IOSTANDARD = LVCMOS33;
+
+NET "sram_lb" LOC = P82;
+NET "sram_lb" IOSTANDARD = LVCMOS33;
+
+NET "sram_oe" LOC = P80;
+NET "sram_oe" IOSTANDARD = LVCMOS33;
+
+NET "sram_ub" LOC = P81;
+NET "sram_ub" IOSTANDARD = LVCMOS33;
+
+
+
+NET "MISO_AT45" LOC = P50;
+NET "MISO_AT45" IOSTANDARD = LVCMOS33;
+
+NET "MOSI_AT45" LOC = P48;
+NET "MOSI_AT45" IOSTANDARD = LVCMOS33;
+
+NET "SCLK_AT45" LOC = P47;
+NET "SCLK_AT45" IOSTANDARD = LVCMOS33;
+
+NET "RESET_AT45" LOC = P46;
+NET "RESET_AT45" IOSTANDARD = LVCMOS33;
+
+NET "CS_AT45" LOC = P45;
+NET "CS_AT45" IOSTANDARD = LVCMOS33;
+
+
+
+
+NET "FMOD_2" LOC = P33;
+NET "FMOD_2" IOSTANDARD = LVCMOS33;
+
+NET "UPR_CH" LOC = P27;
+NET "UPR_CH" IOSTANDARD = LVCMOS33;
+
+
+
+NET "ID[0]" LOC = P5;
+NET "ID[0]" IOSTANDARD = LVCMOS33;
+NET "ID[0]" DRIVE = 24;
+
+NET "ID[1]" LOC = P6;
+NET "ID[1]" IOSTANDARD = LVCMOS33;
+NET "ID[1]" DRIVE = 24;
+
+NET "ID[2]" LOC = P7;
+NET "ID[2]" IOSTANDARD = LVCMOS33;
+NET "ID[2]" DRIVE = 24;
+
+NET "ID[3]" LOC = P8;
+NET "ID[3]" IOSTANDARD = LVCMOS33;
+NET "ID[3]" DRIVE = 24;
+
+NET "ID[4]" LOC = P9;
+NET "ID[4]" IOSTANDARD = LVCMOS33;
+NET "ID[4]" DRIVE = 24;
+
+NET "ID[5]" LOC = P10;
+NET "ID[5]" IOSTANDARD = LVCMOS33;
+NET "ID[5]" DRIVE = 24;
+
+NET "ID[6]" LOC = P11;
+NET "ID[6]" IOSTANDARD = LVCMOS33;
+NET "ID[6]" DRIVE = 24;
+
+NET "ID[7]" LOC = P12;
+NET "ID[7]" IOSTANDARD = LVCMOS33;
+NET "ID[7]" DRIVE = 24;
+
+
+NET "RZV29" LOC = P15;
+NET "RZV29" IOSTANDARD = LVCMOS33;
+
+NET "RZV5" LOC = P126;
+NET "RZV5" IOSTANDARD = LVCMOS33;
+
+NET "RZV4" LOC = P127;
+NET "RZV4" IOSTANDARD = LVCMOS33;
+
+NET "RZV7" LOC = P123;
+NET "RZV7" IOSTANDARD = LVCMOS33;
+
+NET "RZV8" LOC = P67;
+NET "RZV8" IOSTANDARD = LVCMOS33;
+
+NET "RZV12" LOC = P59;
+NET "RZV12" IOSTANDARD = LVCMOS33;
+
+NET "RZV11" LOC = P61;
+NET "RZV11" IOSTANDARD = LVCMOS33;
+
+#Created by Constraints Editor (xc6slx9-tqg144-3) - 2018/12/17
+NET "clk" TNM_NET = clk;
+TIMESPEC TS_clk = PERIOD "clk" 20 ns HIGH 50%;
+#Created by Constraints Editor (xc6slx9-tqg144-3) - 2018/12/19
+INST "ID<0>" TNM = dac_dds;
+INST "ID<1>" TNM = dac_dds;
+INST "ID<2>" TNM = dac_dds;
+INST "ID<3>" TNM = dac_dds;
+INST "ID<4>" TNM = dac_dds;
+INST "ID<5>" TNM = dac_dds;
+INST "ID<6>" TNM = dac_dds;
+INST "ID<7>" TNM = dac_dds;
