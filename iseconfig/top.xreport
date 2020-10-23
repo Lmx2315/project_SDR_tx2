@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2019-01-18T13:55:36</DateModified>
+  <DateModified>2020-10-02T12:29:09</DateModified>
   <ModuleName>top</ModuleName>
   <SummaryTimeStamp>2018-12-25T16:10:54</SummaryTimeStamp>
-  <SavedFilePath>C:/Work/Sokolov_SDR_TX_v2/iseconfig/top.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Work/Sokolov_SDR_TX_v2\</ImplementationReportsDirectory>
+  <SavedFilePath>C:/Work/project_SDR_tx2/iseconfig/top.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Work/project_SDR_tx2\</ImplementationReportsDirectory>
   <DateInitialized>2018-12-17T09:33:10</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
